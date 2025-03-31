@@ -17,12 +17,43 @@ autoload -Uz compinit && compinit
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+export EDITOR="code --wait"
 # git
+alias c='clear'
 alias gc='git clone'
 alias gch='git branch'
 alias gs='git status'
 alias vi='code'
 alias k='kubectl'
+alias ks='kubectl get ns'
+alias ko='kubectl get node'
+alias kp='kubectl get pod -A'
+alias kgp='kubectl get po -n '
+alias kdpm='kubectl describe po -n mimir'
+alias kdp='kubectl describe po -n '
+alias kdpl='kubectl describe po -n loki'
+alias kdpt='kubectl describe po -n tempo'
+alias kdpg='kubectl describe po -n grafana'
+alias kgpm='kubectl get po -n mimir'
+alias kgpl='kubectl get po -n loki'
+alias kgpt='kubectl get po -n tempo'
+alias kgpg='kubectl get po -n grafana'
+alias kgpn='kubectl get po -n'
+alias kno='kubectl get node'
+alias kc='aws eks update-kubeconfig --region us-east-1 --name'
+alias pnr='kubectl get pods --all-namespaces --field-selector=status.phase!=Running'
+
+alias ti='terraform init'
+alias tp='terraform plan'
+alias ta='terraform apply'
+alias taa='terraform apply --auto-approve'
+alias to='terraform output'
+alias td='terraform destroy'
+alias tdd='terraform destroy --auto-approve'
+
 
 alias edit-zsh='code ~/.zshrc'
 alias reload-zsh='source ~/.zshrc'
@@ -105,3 +136,4 @@ eval $(thefuck --alias fk)
 eval "$(zoxide init zsh)"
 
 alias cd="z"
+

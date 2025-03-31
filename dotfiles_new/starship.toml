@@ -2,13 +2,26 @@
 format = """$directory$character"""
 palette = "catppuccin_mocha"
 # move the rest of the prompt to the right
-right_format = """$all"""
+right_format = """\
+$aws\
+$kubernetes
+"""
 command_timeout = 1000
 
 
 [git_branch]
 format =  '[$symbol$branch(:$remote_branch)]($style)'
-
+[aws]
+format = '[$symbol$profile]($style) '
+style = 'bold blue'
+symbol = '☁️ '
+[kubernetes]
+disabled = false
+symbol = '☸ '
+format = '[$symbol$context( \($namespace\))]($style) '
+contexts = [
+  { context_pattern = "arn:aws:eks:us-east-1:058264194719:cluster/meda-dev-bull-eksdemotest", style = "blue", context_alias = "nimbus", symbol = "󱃾 " }
+]
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
