@@ -20,7 +20,7 @@ disabled = false
 symbol = '☸ '
 format = '[$symbol$context( \($namespace\))]($style) '
 contexts = [
-  { context_pattern = "arn:aws:eks:us-east-1:058264194719:cluster/meda-dev-bull-eksdemotest", style = "blue", context_alias = "nimbus", symbol = "󱃾 " }
+  { context_pattern = "arn:aws:eks:us-east-1:058264194719:cluster/meda-dev-.*-eksdemotest", style = "blue", context_alias = "nimbus", symbol = "󱃾 " }
 ]
 
 [palettes.catppuccin_mocha]

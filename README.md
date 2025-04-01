@@ -133,7 +133,8 @@ brew upgrade hashicorp/tap/terraform
 ```
 - Kubernetes
 ```bash
-
+   brew install kubectl
+   kubectl version --client
 ```
 
 3. Embelish the terminal: https://www.josean.com/posts/7-amazing-cli-tools 
